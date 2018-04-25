@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.amoswxz.com/2018/04/17/data-structure-introduction/</loc>
+    
+    <lastmod>2018-04-25T16:41:53.582Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.amoswxz.com/2018/04/18/ArrayList/</loc>
     
     <lastmod>2018-04-25T06:52:20.167Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://blog.amoswxz.com/2018/04/14/hexo/</loc>
     
     <lastmod>2018-04-25T06:51:21.864Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.amoswxz.com/2018/04/17/data-structure-introduction/</loc>
-    
-    <lastmod>2018-04-25T06:51:21.860Z</lastmod>
     
   </url>
   
