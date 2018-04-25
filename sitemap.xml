@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.amoswxz.com/2018/04/25/LinkedList/</loc>
+    <loc>http://blog.amoswxz.com/2018/04/18/ArrayList/</loc>
     
-    <lastmod>2018-04-25T03:34:43.634Z</lastmod>
+    <lastmod>2018-04-25T06:52:20.167Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.amoswxz.com/2018/04/18/ArrayList/</loc>
+    <loc>http://blog.amoswxz.com/2018/04/25/LinkedList/</loc>
     
-    <lastmod>2018-04-25T03:31:29.719Z</lastmod>
+    <lastmod>2018-04-25T06:51:21.867Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.amoswxz.com/2018/04/14/hexo/</loc>
+    
+    <lastmod>2018-04-25T06:51:21.864Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.amoswxz.com/2018/04/17/data-structure-introduction/</loc>
+    
+    <lastmod>2018-04-25T06:51:21.860Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.amoswxz.com/2018/04/16/hexo1/</loc>
+    
+    <lastmod>2018-04-25T06:51:21.855Z</lastmod>
     
   </url>
   
@@ -61,27 +82,6 @@
     <loc>http://blog.amoswxz.com//404.html</loc>
     
     <lastmod>2018-04-23T16:09:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.amoswxz.com/2018/04/17/data-structure-introduction/</loc>
-    
-    <lastmod>2018-04-17T15:09:15.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.amoswxz.com/2018/04/16/hexo1/</loc>
-    
-    <lastmod>2018-04-16T02:40:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.amoswxz.com/2018/04/14/hexo/</loc>
-    
-    <lastmod>2018-04-16T02:40:32.000Z</lastmod>
     
   </url>
   
