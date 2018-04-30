@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://blog.amoswxz.com/2018/04/17/data-structure-introduction/image-20180426005146440.png">
 <meta property="og:image" content="http://blog.amoswxz.com/2018/04/17/data-structure-introduction/image-20180426105830295.png">
 <meta property="og:image" content="http://blog.amoswxz.com/2018/04/17/data-structure-introduction/image-20180426113520797.png">
-<meta property="og:updated_time" content="2018-04-26T03:47:43.991Z">
+<meta property="og:updated_time" content="2018-04-30T12:20:03.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构简介（ADT）">
 <meta name="twitter:description" content="一：什么是数据结构： 数据结构是计算机存储、组织数据的方式。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术有关。 二：常用的数据结构（大致的介绍，后面会详细介绍） 1：数组（Array）是包含类似数据类型元素的对象。这是我们存储相似元素的数据结构。我们只能将一组固定的元素存储在java">
@@ -390,7 +390,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/17/data-structure-introduction/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 484(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 572(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
@@ -409,8 +409,7 @@
 <p>2：栈（Stack）LIFO 先进后出</p>
 <p>3：队列（Queue）FIFO 先进先出</p>
 <p>4：链表：链表也是线性表的一种，实际有Node节点组成，在内存中可以不是连续的。查询慢；插入查找快</p>
-<p>4.1：下图展示的是一个单向链表，头节点值域为空，指针域指向下一个节点，最后一个节点的指针域为空。</p>
-<p>​    ps：双端链表就是头结点有个引用直接指向最后一个节点。双端链表的好处在于。比如在尾部插入一个结点，双端链表可以进行直接操作但单向链表只能通过next节点循环找到最后结点操作。</p>
+<p>4.1：下图展示的是一个单向链表，其中有两个元素，数据域，值域。<br>头指针：我们把指向头节点的指针域成为头指针。头指针是必须存在的。<br>头结点：很多时候，会在链表的头部附加一个结点，该结点的数据域可以不存储任何信息，这个结点称为头结点。<br>头节点值域可以为空，指针域指向下一个节点，最后一个节点的指针域为空。<br>ps：双端链表就是头结点有个引用直接指向最后一个节点。双端链表的好处在于。比如在尾部插入一个结点，双端链表可以进行直接操作但单向链表只能通过next节点循环找到最后结点操作。</p>
 <p><img src="image-20180426105830295.png" alt="image-20180426105830295"></p>
 <p>4.2：下图展示的是一个双向列表</p>
 <p><img src="image-20180426113520797.png" alt="image-20180426113520797"></p>
