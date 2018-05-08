@@ -18,22 +18,22 @@
   
   
   <title>集合源码篇（ArrayList） | Amos</title>
-  <meta name="description" content="ArrayList简介ArrayList是基于数组实现的，是一个动态数组。容量可以自动增加动态增长内存。 ArrayList是线程不安全的，只能在单线程环境下使用。多线程环境下使用juc下面的CopyOnWriteArrayList（后续会介绍） ArrayList类关系继承图 从该图可以看到，ArrayList继承AbstractList类，AbstractList类实现List接口；Array">
+  <meta name="description" content="ArrayList简介ArrayList是基于数组实现的，是一个动态数组。容量可以自动增加动态增长内存。 ArrayList是线程不安全的，只能在单线程环境下使用。多线程环境下使用juc下面的CopyOnWriteArrayList（后续会介绍） ArrayList类关系图 从该图可以看到，ArrayList继承AbstractList类，AbstractList类实现List接口；ArrayLi">
 <meta name="keywords" content="集合源码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="集合源码篇（ArrayList）">
 <meta property="og:url" content="http://blog.amoswxz.com/2018/04/18/ArrayList/index.html">
 <meta property="og:site_name" content="Amos">
-<meta property="og:description" content="ArrayList简介ArrayList是基于数组实现的，是一个动态数组。容量可以自动增加动态增长内存。 ArrayList是线程不安全的，只能在单线程环境下使用。多线程环境下使用juc下面的CopyOnWriteArrayList（后续会介绍） ArrayList类关系继承图 从该图可以看到，ArrayList继承AbstractList类，AbstractList类实现List接口；Array">
+<meta property="og:description" content="ArrayList简介ArrayList是基于数组实现的，是一个动态数组。容量可以自动增加动态增长内存。 ArrayList是线程不安全的，只能在单线程环境下使用。多线程环境下使用juc下面的CopyOnWriteArrayList（后续会介绍） ArrayList类关系图 从该图可以看到，ArrayList继承AbstractList类，AbstractList类实现List接口；ArrayLi">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://blog.amoswxz.com/2018/04/18/ArrayList/ArrayList.png">
 <meta property="og:image" content="http://blog.amoswxz.com/2018/04/18/ArrayList/image-201804190003174.png">
 <meta property="og:image" content="http://blog.amoswxz.com/2018/04/18/ArrayList/image-201804190007478.png">
 <meta property="og:image" content="http://blog.amoswxz.com/2018/04/18/ArrayList/image-201804192120011.png">
-<meta property="og:updated_time" content="2018-04-25T06:52:20.167Z">
+<meta property="og:updated_time" content="2018-05-07T16:57:28.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集合源码篇（ArrayList）">
-<meta name="twitter:description" content="ArrayList简介ArrayList是基于数组实现的，是一个动态数组。容量可以自动增加动态增长内存。 ArrayList是线程不安全的，只能在单线程环境下使用。多线程环境下使用juc下面的CopyOnWriteArrayList（后续会介绍） ArrayList类关系继承图 从该图可以看到，ArrayList继承AbstractList类，AbstractList类实现List接口；Array">
+<meta name="twitter:description" content="ArrayList简介ArrayList是基于数组实现的，是一个动态数组。容量可以自动增加动态增长内存。 ArrayList是线程不安全的，只能在单线程环境下使用。多线程环境下使用juc下面的CopyOnWriteArrayList（后续会介绍） ArrayList类关系图 从该图可以看到，ArrayList继承AbstractList类，AbstractList类实现List接口；ArrayLi">
 <meta name="twitter:image" content="http://blog.amoswxz.com/2018/04/18/ArrayList/ArrayList.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://blog.amoswxz.com/2018/04/18/ArrayList/index.html">
@@ -225,7 +225,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo搭建博客/">Hexo搭建博客</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构简介/">数据结构简介</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/集合源码/">集合源码</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo搭建博客/">Hexo搭建博客</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构简介/">数据结构简介</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/集合源码/">集合源码</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -235,7 +235,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo搭建博客/">Hexo搭建博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/集合源码/">集合源码</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo搭建博客/">Hexo搭建博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/集合源码/">集合源码</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -245,7 +245,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/Hexo搭建博客/" style="font-size: 14px;">Hexo搭建博客</a> <a href="/tags/数据结构/" style="font-size: 13px;">数据结构</a> <a href="/tags/集合源码/" style="font-size: 14px;">集合源码</a>
+      <a href="/tags/Hexo搭建博客/" style="font-size: 13px;">Hexo搭建博客</a> <a href="/tags/数据结构/" style="font-size: 13px;">数据结构</a> <a href="/tags/集合源码/" style="font-size: 13px;">集合源码</a>
     </div>
   </div>
 
@@ -254,7 +254,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -303,6 +303,21 @@
                 <a class="category-link" href="/categories/数据结构简介/">数据结构简介</a>
               </p>
               <p class="item-title">
+                <a href="/2018/04/17/Queue/" class="title">数据结构简介（Queue）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-04-16T16:00:00.000Z" itemprop="datePublished">2018-04-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/数据结构简介/">数据结构简介</a>
+              </p>
+              <p class="item-title">
                 <a href="/2018/04/17/data-structure-introduction/" class="title">数据结构简介（ADT）</a>
               </p>
               <p class="item-date">
@@ -322,21 +337,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2018-04-15T16:00:00.000Z" itemprop="datePublished">2018-04-16</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/Hexo搭建博客/">Hexo搭建博客</a>
-              </p>
-              <p class="item-title">
-                <a href="/2018/04/14/hexo/" class="title">Hexo快速搭建博客(一)</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-04-13T16:00:00.000Z" itemprop="datePublished">2018-04-14</time>
               </p>
             </div>
           </li>
@@ -391,7 +391,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/18/ArrayList/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2,100(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2,098(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9(分)</span>
@@ -403,7 +403,7 @@
       
         <h3 id="ArrayList简介"><a href="#ArrayList简介" class="headerlink" title="ArrayList简介"></a>ArrayList简介</h3><p>ArrayList是基于数组实现的，是一个动态数组。容量可以自动增加动态增长内存。</p>
 <p>ArrayList是线程不安全的，只能在单线程环境下使用。多线程环境下使用juc下面的CopyOnWriteArrayList（后续会介绍）</p>
-<h3 id="ArrayList类关系继承图"><a href="#ArrayList类关系继承图" class="headerlink" title="ArrayList类关系继承图"></a>ArrayList类关系继承图</h3><p><img src="ArrayList.png" alt="ArrayList"></p>
+<h3 id="ArrayList类关系图"><a href="#ArrayList类关系图" class="headerlink" title="ArrayList类关系图"></a>ArrayList类关系图</h3><p><img src="ArrayList.png" alt="ArrayList"></p>
 <p>从该图可以看到，ArrayList继承AbstractList类，AbstractList类实现List接口；ArrayList实现了List接口。有人就会问，为什么ArrayList既要继承AbstractList又实现了List接口呢。这是因为java集合框架用到了很多适配器模式，用AbstractList去实现List接口，这样ArrayList继承AbstractList只需要重写自己需要的方法即可，不用实现接口中的所有方法。实现了randomAccess接口，RandomAccess 是一个空的接口，它用来标识某个类是否支持 <strong>随机访问</strong>（随机访问，相对比“按顺序访问”）。一个支持随机访问的类明显可以使用更加高效的算法。</p>
 <h5 id="源码解析"><a href="#源码解析" class="headerlink" title="源码解析"></a>源码解析</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> java.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.function.Consumer;</span><br><span class="line"><span class="keyword">import</span> java.util.function.Predicate;</span><br><span class="line"><span class="keyword">import</span> java.util.function.UnaryOperator;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="comment">/**很多人往往忽略了类上面的注释，其实这个注释才是最重要的。上面注释大概介绍了几点</span></span><br><span class="line"><span class="comment">         *1：ArrayList是List接口的大小可变数组实现的，实现了List中接口中的所有方法。允许元素为null。</span></span><br><span class="line"><span class="comment">         *2：时间复杂度：size()，isEmpty()，get()，set()，iterator()，listIterator()，这些操作时间复杂度是 o(1)。</span></span><br><span class="line"><span class="comment">         因为是根据数组下标实现的。可以根据索引直接定位到元素位置。add()，remove()方法的时间复杂度是o(n)。因为添加删除元素需要移动元素位置。</span></span><br><span class="line"><span class="comment">         *3：ArrayList容量可以自动增长</span></span><br><span class="line"><span class="comment">         *4：ArrayList不是同步的，并发修改会返回fail-fast。会抛出ConcurrentModificationException**/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">8683452581122892189L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Default initial capacity.</span></span><br><span class="line"><span class="comment">     * 默认初始化容量</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_CAPACITY = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 指定ArrayList容量为0时，返回该空数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object[] EMPTY_ELEMENTDATA = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 调用无参构造的时候返回该对象。与EMPTY_ELEMENTDATA的区别在于</span></span><br><span class="line"><span class="comment">     * 指定容量大小为0返回EMPTY_ELEMENTDATA。默认返回DEFAULTCAPACITY_EMPTY_ELEMENTDATA</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 保存到ArrayList中元素，ArrayList的容量就是数组大小</span></span><br><span class="line"><span class="comment">	 * 第一次添加元素到ArrayList，该数组扩容为默认的大小DEFAULT_CAPACITY</span></span><br><span class="line"><span class="comment">     * transient 被标记表示不可序列化</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">transient</span> Object[] elementData; <span class="comment">// non-private to simplify nested class access</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The size of the ArrayList (the number of elements it contains).</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@serial</span></span></span><br><span class="line"><span class="comment">     * ArrayList的大小</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="ArrayList提供了三个构造函数"><a href="#ArrayList提供了三个构造函数" class="headerlink" title="ArrayList提供了三个构造函数"></a>ArrayList提供了三个构造函数</h5><p><img src="image-201804190003174.png" alt="image-201804190003174"></p>
@@ -490,7 +490,7 @@
     
     
     <li class="next">
-      <a href="/2018/04/17/data-structure-introduction/" title="数据结构简介（ADT）"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2018/04/17/Queue/" title="数据结构简介（Queue）"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
