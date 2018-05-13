@@ -17,25 +17,20 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>数据结构简介（ADT） | Amos</title>
-  <meta name="description" content="一：什么是数据结构： 数据结构是计算机存储、组织数据的方式。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术有关。 二：常用的数据结构（大致的介绍，后面会详细介绍） 1：数组（Array）是包含类似数据类型元素的对象。这是我们存储相似元素的数据结构。我们只能将一组固定的元素存储在java">
-<meta name="keywords" content="数据结构">
+  <title>Amos</title>
+  <meta name="description" content="记录Amos成长路上点点滴滴~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构简介（ADT）">
-<meta property="og:url" content="http://blog.amoswxz.com/2018/04/17/data-structure-introduction/index.html">
+<meta property="og:title" content="Amos">
+<meta property="og:url" content="http://blog.amoswxz.com/2018/05/10/Iterator和Iterable/index.html">
 <meta property="og:site_name" content="Amos">
-<meta property="og:description" content="一：什么是数据结构： 数据结构是计算机存储、组织数据的方式。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术有关。 二：常用的数据结构（大致的介绍，后面会详细介绍） 1：数组（Array）是包含类似数据类型元素的对象。这是我们存储相似元素的数据结构。我们只能将一组固定的元素存储在java">
+<meta property="og:description" content="记录Amos成长路上点点滴滴~">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://blog.amoswxz.com/2018/04/17/data-structure-introduction/image-20180426005146440.png">
-<meta property="og:image" content="http://blog.amoswxz.com/2018/04/17/data-structure-introduction/image-20180426105830295.png">
-<meta property="og:image" content="http://blog.amoswxz.com/2018/04/17/data-structure-introduction/image-20180426113520797.png">
-<meta property="og:updated_time" content="2018-04-30T14:13:47.368Z">
+<meta property="og:updated_time" content="2018-05-10T06:57:57.162Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构简介（ADT）">
-<meta name="twitter:description" content="一：什么是数据结构： 数据结构是计算机存储、组织数据的方式。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术有关。 二：常用的数据结构（大致的介绍，后面会详细介绍） 1：数组（Array）是包含类似数据类型元素的对象。这是我们存储相似元素的数据结构。我们只能将一组固定的元素存储在java">
-<meta name="twitter:image" content="http://blog.amoswxz.com/2018/04/17/data-structure-introduction/image-20180426005146440.png">
+<meta name="twitter:title" content="Amos">
+<meta name="twitter:description" content="记录Amos成长路上点点滴滴~">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://blog.amoswxz.com/2018/04/17/data-structure-introduction/index.html">
+  <link rel="canonical" href="http://blog.amoswxz.com/2018/05/10/Iterator和Iterable/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Amos" type="application/atom+xml">
   
@@ -353,71 +348,36 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-data-structure-introduction" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Iterator和Iterable" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
-      
-        
-  
-    <h1 class="article-title" itemprop="name">
-      数据结构简介（ADT）
-    </h1>
-  
-
       
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/04/17/data-structure-introduction/" class="article-date">
-	  <time datetime="2018-04-16T16:00:00.000Z" itemprop="datePublished">2018-04-17</time>
+	<a href="/2018/05/10/Iterator和Iterable/" class="article-date">
+	  <time datetime="2018-05-10T06:57:35.231Z" itemprop="datePublished">2018-05-10</time>
 	</a>
 </span>
         
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/数据结构简介/">数据结构简介</a>
-  </span>
-
         
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/数据结构/">数据结构</a>
-  </span>
-
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/17/data-structure-introduction/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/05/10/Iterator和Iterable/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 581(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 0(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <p>一：什么是数据结构：</p>
-<p>数据结构是计算机存储、组织数据的方式。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术有关。</p>
-<p>二：常用的数据结构（大致的介绍，后面会详细介绍）</p>
-<p>1：数组（Array）是包含类似数据类型元素的对象。这是我们存储相似元素的数据结构。我们只能将一组固定的元素存储在java数组中。java中的数组是基于索引的，数组的第一个元素存储在0索引处。查询快；插入删除慢、内存连续、数组大小固定。</p>
-<p>1.1：数组在heap中是分配的内存是连续的。如果查找直接按照索引查询即可。如果想要在2,3中插入4，那么就设计到元素的扩容和元素的移动</p>
-<p><img src="image-20180426005146440.png" alt="image-20180426005146440"></p>
-<p>2：栈（Stack）LIFO 先进后出</p>
-<p>3：队列（Queue）FIFO 先进先出</p>
-<p>4：链表：链表也是线性表的一种，实际有Node节点组成，物理存储结构上不连续，逻辑上连续；大小不固定。查询慢；插入查找快</p>
-<p>4.1：下图展示的是一个单向链表，其中有两个元素，数据域，值域。<br>头指针：我们把指向头节点的指针域成为头指针。头指针是必须存在的。<br>头结点：很多时候，会在链表的头部附加一个结点，该结点的数据域可以不存储任何信息，这个结点称为头结点。<br>头节点值域可以为空，指针域指向下一个节点，最后一个节点的指针域为空。<br>ps：双端链表就是头结点有个引用直接指向最后一个节点。双端链表的好处在于。比如在尾部插入一个结点，双端链表可以进行直接操作但单向链表只能通过next节点循环找到最后结点操作。</p>
-<p><img src="image-20180426105830295.png" alt="image-20180426105830295"></p>
-<p>4.2：下图展示的是一个双向列表</p>
-<p><img src="image-20180426113520797.png" alt="image-20180426113520797"></p>
-<p>5：树（Tree）</p>
-<p>6：图（Graph）</p>
-<p>7：堆（Heap）</p>
-<p>8：散列表（Hash）</p>
-
+        
       
     </div>
     <div class="article-footer">
@@ -426,7 +386,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://blog.amoswxz.com/2018/04/17/data-structure-introduction/" title="数据结构简介（ADT）" target="_blank" rel="external">http://blog.amoswxz.com/2018/04/17/data-structure-introduction/</a>
+      <a href="http://blog.amoswxz.com/2018/05/10/Iterator和Iterable/" title="" target="_blank" rel="external">http://blog.amoswxz.com/2018/05/10/Iterator和Iterable/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -475,13 +435,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2018/04/17/Queue/" title="数据结构简介（Queue）"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2018/04/16/hexo1/" title="Hexo快速搭建博客(二)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2018/05/04/LinkedList/" title="集合源码篇（LinkedList）"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -616,7 +572,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: '数据结构简介（ADT）', 
+  id: '', 
   owner: 'amoswxz', // 可以是你的GitHub用户名，也可以是github id
   repo: 'AmosWxz.github.io',
   oauth: {
