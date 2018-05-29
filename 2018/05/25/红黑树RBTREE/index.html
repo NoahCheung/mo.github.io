@@ -17,19 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>分类: Hexo搭建博客 | Amos</title>
-  <meta name="description" content="记录Amos成长路上点点滴滴~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Amos">
-<meta property="og:url" content="http://blog.amoswxz.com/categories/Hexo搭建博客/index.html">
+  <title>红黑树 | Amos</title>
+  <meta name="description" content="一：简介红黑树从本质上来说就是一颗二叉查找树，但是在二叉树的基础上增加了着色相关的性质，使得红黑树可以保证相对平衡，从而保证红黑树的增删改查的时间复杂度最坏也能达到O(log N)。 二：特点  每个节点要么是黑的，要么是红的 根节点是黑的 叶节点是黑的 如果一个节点是红的，他的两个儿子节点都是黑的 对于任一节点而言，其到叶节点树尾端NIL指针的每一条路径都包含相同数目的黑节点">
+<meta name="keywords" content="集合源码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="红黑树">
+<meta property="og:url" content="http://blog.amoswxz.com/2018/05/25/红黑树RBTREE/index.html">
 <meta property="og:site_name" content="Amos">
-<meta property="og:description" content="记录Amos成长路上点点滴滴~">
+<meta property="og:description" content="一：简介红黑树从本质上来说就是一颗二叉查找树，但是在二叉树的基础上增加了着色相关的性质，使得红黑树可以保证相对平衡，从而保证红黑树的增删改查的时间复杂度最坏也能达到O(log N)。 二：特点  每个节点要么是黑的，要么是红的 根节点是黑的 叶节点是黑的 如果一个节点是红的，他的两个儿子节点都是黑的 对于任一节点而言，其到叶节点树尾端NIL指针的每一条路径都包含相同数目的黑节点">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-25T08:25:18.015Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Amos">
-<meta name="twitter:description" content="记录Amos成长路上点点滴滴~">
+<meta name="twitter:title" content="红黑树">
+<meta name="twitter:description" content="一：简介红黑树从本质上来说就是一颗二叉查找树，但是在二叉树的基础上增加了着色相关的性质，使得红黑树可以保证相对平衡，从而保证红黑树的增删改查的时间复杂度最坏也能达到O(log N)。 二：特点  每个节点要么是黑的，要么是红的 根节点是黑的 叶节点是黑的 如果一个节点是红的，他的两个儿子节点都是黑的 对于任一节点而言，其到叶节点树尾端NIL指针的每一条路径都包含相同数目的黑节点">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://blog.amoswxz.com/categories/Hexo搭建博客/index.html">
+  <link rel="canonical" href="http://blog.amoswxz.com/2018/05/25/红黑树RBTREE/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Amos" type="application/atom+xml">
   
@@ -41,6 +43,8 @@
   <link rel="stylesheet" href="/css/style.css">
   
     
+    
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
     
 
 </head>
@@ -342,65 +346,192 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-categories article-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">分类: Hexo搭建博客</h1>
-      <p class="hidden-xs">共 2 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/categories">All</a></li>
-          
-          <li><a href="/categories/集合源码/">集合源码</a></li>
-          
-          <li><a href="/categories/数据结构简介/">数据结构简介</a></li>
-          
-          <li><a href="/categories/Hexo搭建博客/">Hexo搭建博客</a></li>
-          
-          <li><a href="/categories/数据结构/">数据结构</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="panel panel-default b-no">
-    <div class="panel-heading" role="tab">
-        <h4 class="panel-title">
-            <a data-toggle="collapse" href="#collapseHexo搭建博客" aria-expanded="true">
-              <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>
-              Hexo搭建博客
-            </a>
-            <small class="text-muted">(Total 2 articles)</small>
-        </h4>
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-红黑树RBTREE" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      红黑树
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/05/25/红黑树RBTREE/" class="article-date">
+	  <time datetime="2018-05-24T16:00:00.000Z" itemprop="datePublished">2018-05-25</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/数据结构/">数据结构</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/集合源码/">集合源码</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/05/25/红黑树RBTREE/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 172(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
+
+      </div>
     </div>
-    <div id="collapseHexo搭建博客" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingHexo搭建博客">
-        <div class="panel-body">
-            <div class="collection">
-              
-                
-<a href="/2018/04/16/hexo1/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-15T16:00:00.000Z" itemprop="datePublished">2018-04-16</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Hexo快速搭建博客(二)
-</a>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <h3 id="一：简介"><a href="#一：简介" class="headerlink" title="一：简介"></a>一：简介</h3><p>红黑树从本质上来说就是一颗二叉查找树，但是在二叉树的基础上增加了着色相关的性质，使得红黑树可以保证相对平衡，从而保证红黑树的增删改查的时间复杂度最坏也能达到O(log N)。</p>
+<h3 id="二：特点"><a href="#二：特点" class="headerlink" title="二：特点"></a>二：特点</h3><blockquote>
+<ol>
+<li>每个节点要么是黑的，要么是红的</li>
+<li>根节点是黑的</li>
+<li>叶节点是黑的</li>
+<li>如果一个节点是红的，他的两个儿子节点都是黑的</li>
+<li>对于任一节点而言，其到叶节点树尾端NIL指针的每一条路径都包含相同数目的黑节点</li>
+</ol>
+</blockquote>
 
-
-              
-                
-<a href="/2018/04/14/hexo/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-13T16:00:00.000Z" itemprop="datePublished">2018-04-14</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Hexo快速搭建博客(一)
-</a>
-
-
-              
-            </div>
-        </div>
+      
     </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://blog.amoswxz.com/2018/05/25/红黑树RBTREE/" title="红黑树" target="_blank" rel="external">http://blog.amoswxz.com/2018/05/25/红黑树RBTREE/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/amoswxz" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/favicon.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/amoswxz" target="_blank"><span class="text-dark">Amos</span><small class="ml-1x">Java &amp; Python &amp; Docker</small></a></h3>
+        <div>NOTHING IS IMPOSSIBLE</div>
+      </div>
+    </figure>
+  </div>
 </div>
+
+
     </div>
   </article>
-   
+  
+    
+  <section id="comments">
+  	
+       
+
+
+    
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2018/05/22/List开发中遇到一些坑/" title="List遇到的坑"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="wechat,weibo,qq,facebook,twitter" data-mobile-sites="weibo,qq,qzone,wechat"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/AliPay.jpeg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/Wechat.jpeg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -461,6 +592,28 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
+    
+        
+    
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: '红黑树', 
+  owner: 'amoswxz', // 可以是你的GitHub用户名，也可以是github id
+  repo: 'AmosWxz.github.io',
+  oauth: {
+    client_id: '97612adfb31213adc94c',
+    client_secret: '5bbdc6f4a3f455fe5486b4a365f5591458521efd',
+  }
+})
+gitment.render('comments')
+</script>
+
+    
+
     
     
 
