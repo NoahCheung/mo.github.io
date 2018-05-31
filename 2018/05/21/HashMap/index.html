@@ -18,21 +18,21 @@
   
   
   <title>集合源码篇（HashMap） | Amos</title>
-  <meta name="description" content="一：HashMap简介  1： HashMap存储结构   2：HashMap：它根据键的hashCode值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，可以">
+  <meta name="description" content="一：HashMap简介（1.8）  1： HashMap存储结构   2：HashMap：它根据键的hashCode值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程">
 <meta name="keywords" content="集合源码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="集合源码篇（HashMap）">
 <meta property="og:url" content="http://blog.amoswxz.com/2018/05/21/HashMap/index.html">
 <meta property="og:site_name" content="Amos">
-<meta property="og:description" content="一：HashMap简介  1： HashMap存储结构   2：HashMap：它根据键的hashCode值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，可以">
+<meta property="og:description" content="一：HashMap简介（1.8）  1： HashMap存储结构   2：HashMap：它根据键的hashCode值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://blog.amoswxz.com/2018/05/21/HashMap/image-20180521154332523.png">
 <meta property="og:image" content="http://blog.amoswxz.com/2018/05/21/HashMap/image-20180521160307137.png">
 <meta property="og:image" content="http://blog.amoswxz.com/Users/mujourney/Amos-Blog/source/_posts/image-20180529210946248.png">
-<meta property="og:updated_time" content="2018-05-30T06:20:39.442Z">
+<meta property="og:updated_time" content="2018-05-30T08:12:25.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集合源码篇（HashMap）">
-<meta name="twitter:description" content="一：HashMap简介  1： HashMap存储结构   2：HashMap：它根据键的hashCode值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，可以">
+<meta name="twitter:description" content="一：HashMap简介（1.8）  1： HashMap存储结构   2：HashMap：它根据键的hashCode值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程">
 <meta name="twitter:image" content="http://blog.amoswxz.com/2018/05/21/HashMap/image-20180521154332523.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://blog.amoswxz.com/2018/05/21/HashMap/index.html">
@@ -224,7 +224,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo搭建博客/">Hexo搭建博客</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构简介/">数据结构简介</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/集合源码/">集合源码</a><span class="category-list-count">5</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo搭建博客/">Hexo搭建博客</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构简介/">数据结构简介</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/集合源码/">集合源码</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试篇/">面试篇</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -234,7 +234,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo搭建博客/">Hexo搭建博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/集合源码/">集合源码</a><span class="tag-list-count">6</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo搭建博客/">Hexo搭建博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/集合源码/">集合源码</a><span class="tag-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -253,7 +253,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -265,6 +265,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/面试篇/">面试篇</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/05/30/HashMap面试总结/" class="title">集合源码篇（HashMap）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-05-29T16:00:00.000Z" itemprop="datePublished">2018-05-30</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -325,21 +340,6 @@
             </div>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/集合源码/">集合源码</a>
-              </p>
-              <p class="item-title">
-                <a href="/2018/05/04/LinkedList/" class="title">集合源码篇（LinkedList）</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-05-03T16:00:00.000Z" itemprop="datePublished">2018-05-04</time>
-              </p>
-            </div>
-          </li>
-          
       </ul>
     </div>
   </div>
@@ -390,7 +390,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/05/21/HashMap/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 4,334(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 4,336(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 21(分)</span>
@@ -400,7 +400,7 @@
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <h3 id="一：HashMap简介"><a href="#一：HashMap简介" class="headerlink" title="一：HashMap简介"></a>一：HashMap简介</h3><p>  1： HashMap存储结构</p>
+        <h3 id="一：HashMap简介（1-8）"><a href="#一：HashMap简介（1-8）" class="headerlink" title="一：HashMap简介（1.8）"></a>一：HashMap简介（1.8）</h3><p>  1： HashMap存储结构</p>
 <p><img src="image-20180521154332523.png" alt="image-20180521154332523"></p>
 <p><img src="image-20180521160307137.png" alt="image-20180521160307137"></p>
 <p>2：HashMap：它根据键的hashCode值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，可以用 Collections的synchronizedMap方法使HashMap具有线程安全的能力，或者使用ConcurrentHashMap。</p>

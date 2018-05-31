@@ -17,19 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>分类: 数据结构 | Amos</title>
-  <meta name="description" content="记录Amos成长路上点点滴滴~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Amos">
-<meta property="og:url" content="http://blog.amoswxz.com/categories/数据结构/index.html">
+  <title>集合源码篇（HashMap） | Amos</title>
+  <meta name="description" content="一：针对hashMap面试问题做一个总结吧 1：HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，使用ConcurrentHashMap。 2：hashMap采用数组加链表的形式。如果链表的长度大于8并且capacity大于MIN_TREEIFY_CAPA">
+<meta name="keywords" content="集合源码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集合源码篇（HashMap）">
+<meta property="og:url" content="http://blog.amoswxz.com/2018/05/30/HashMap面试总结/index.html">
 <meta property="og:site_name" content="Amos">
-<meta property="og:description" content="记录Amos成长路上点点滴滴~">
+<meta property="og:description" content="一：针对hashMap面试问题做一个总结吧 1：HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，使用ConcurrentHashMap。 2：hashMap采用数组加链表的形式。如果链表的长度大于8并且capacity大于MIN_TREEIFY_CAPA">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-31T02:26:53.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Amos">
-<meta name="twitter:description" content="记录Amos成长路上点点滴滴~">
+<meta name="twitter:title" content="集合源码篇（HashMap）">
+<meta name="twitter:description" content="一：针对hashMap面试问题做一个总结吧 1：HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，使用ConcurrentHashMap。 2：hashMap采用数组加链表的形式。如果链表的长度大于8并且capacity大于MIN_TREEIFY_CAPA">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://blog.amoswxz.com/categories/数据结构/index.html">
+  <link rel="canonical" href="http://blog.amoswxz.com/2018/05/30/HashMap面试总结/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Amos" type="application/atom+xml">
   
@@ -41,6 +43,8 @@
   <link rel="stylesheet" href="/css/style.css">
   
     
+    
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
     
 
 </head>
@@ -342,59 +346,202 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-categories article-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">分类: 数据结构</h1>
-      <p class="hidden-xs">共 1 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/categories">All</a></li>
-          
-          <li><a href="/categories/集合源码/">集合源码</a></li>
-          
-          <li><a href="/categories/面试篇/">面试篇</a></li>
-          
-          <li><a href="/categories/数据结构简介/">数据结构简介</a></li>
-          
-          <li><a href="/categories/Hexo搭建博客/">Hexo搭建博客</a></li>
-          
-          <li><a href="/categories/数据结构/">数据结构</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="panel panel-default b-no">
-    <div class="panel-heading" role="tab">
-        <h4 class="panel-title">
-            <a data-toggle="collapse" href="#collapse数据结构" aria-expanded="true">
-              <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>
-              数据结构
-            </a>
-            <small class="text-muted">(Total 1 articles)</small>
-        </h4>
-    </div>
-    <div id="collapse数据结构" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading数据结构">
-        <div class="panel-body">
-            <div class="collection">
-              
-                
-<a href="/2018/05/25/红黑树RBTREE/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-05-24T16:00:00.000Z" itemprop="datePublished">2018-05-25</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 红黑树
-</a>
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-HashMap面试总结" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      集合源码篇（HashMap）
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/05/30/HashMap面试总结/" class="article-date">
+	  <time datetime="2018-05-29T16:00:00.000Z" itemprop="datePublished">2018-05-30</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/面试篇/">面试篇</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/集合源码/">集合源码</a>
+  </span>
 
 
-              
-            </div>
-        </div>
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/05/30/HashMap面试总结/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 893(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
+	
+
+      </div>
     </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <p>一：针对hashMap面试问题做一个总结吧</p>
+<p>1：HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，使用ConcurrentHashMap。</p>
+<p>2：hashMap采用数组加链表的形式。如果链表的长度大于8并且capacity大于MIN_TREEIFY_CAPACITY=64才会变成红黑树。</p>
+<p>3：hashMap默认的容量是16，默认容量并不是第一次new的时候容量就是16，而是put的时候resize()的扩容的。</p>
+<p>4：hashMap默认的加载因子loadFactor=0.75，这个数值是对空间和时间效率的一个平衡选择。如果内存空间很多而又对时间效率要求很高，可以降低负载因子Loadfactor的值；如果内存空间紧张而对时间效率要求不高，可以增加负载因子loadFactor的值，这个值可以大于1。</p>
+<p>5：hash()算法原理跟获取元素index有关。（n-1） &amp; hash</p>
+<h3 id="6：put-方法简介："><a href="#6：put-方法简介：" class="headerlink" title="6：put()方法简介："></a>6：put()方法简介：</h3><p>1：根据key获取hash值，hash算法大致是key的hashCode的高16位和低16位异或。</p>
+<p>2：判断tab元素是否为null，如果null进行扩容操作。扩容完成以后根据(n-1)&amp;hash(key)获取到元素下标。</p>
+<p>3：根据index获取tab中的元素e，如果获取到e为空，说明该index没元素，直接赋值即可。如果获取到的e不为空，判断e.key和key是否相等，如果相等直接覆盖原来的值即可。如果不相等，判断e是否是TreeNode,如果是，根据e从红黑树查询元素。如果不是TreeNode，循环index下标的元素，判断是否有元素相等，如果有key相等直接返回。没有元素相等链表的尾节点插入元素即可，此处还会判断节点元素是否大于TREEIFY_THRESHOLD，如果大于TREEIFY_THRESHOLD转为红黑树</p>
+<p>4：如果key已经存在，把value直接覆盖，不需要修改modCount直接返回即可。</p>
+<p>5：如果不存在，需要modCount++；判断size++&gt;threshold，大于扩容即可。</p>
+<h3 id="7：get-方法简介："><a href="#7：get-方法简介：" class="headerlink" title="7：get()方法简介："></a>7：get()方法简介：</h3><p>1:根据key获取hash。</p>
+<p>2:根据(n-1)&amp;hash获取index</p>
+<p>3:判断index的第一个节点元素e是否等于key</p>
+<p>4:判断e.next是否等于空，如果不等于空，循环bin查找元素</p>
+<h3 id="8：resize-方法简介："><a href="#8：resize-方法简介：" class="headerlink" title="8：resize()方法简介："></a>8：resize()方法简介：</h3><p>1：判断oldTab.length&gt;0</p>
+<p>2：oldTab.length&gt;0，判断oldTab是否大于最大容量MAXIMUM_CAPACITY，如果大于则threshold=Integer.MAX_VALUE。不大于就把容量扩大2倍并且比较是否大于MAXIMUM_CAPACITY，不大于则临界值扩大2倍。</p>
+<p>3：如果oldTab.length&lt;=0，临界值大于0，说明这是第一次初始化map并且初始化map的时候指定了初始容量。这个时候会调用tableSizeFor()计算临界值。扩容的时候会把newCap=threshold。重新计算临界值=新的容量*加载因子</p>
+<p>4：如果oldTab.length&lt;=0，临界值不大于0。容量等于默认值，临界值=默认容量*加载因子</p>
+<p>5：循环之前的数组，判断同一个index的bin上是否有多个元素，如果只有一个元素，根据这个元素重新计算index，赋值即可。如果存在多个元素，判断元素是否是红黑树，如果是进行红黑树扩容。如果不是则进行元素移动，元素可能在原来的index。也有可能变为oldCap+index。此处移动元素的原理，就是循环bin上的元素。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://blog.amoswxz.com/2018/05/30/HashMap面试总结/" title="集合源码篇（HashMap）" target="_blank" rel="external">http://blog.amoswxz.com/2018/05/30/HashMap面试总结/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/amoswxz" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/favicon.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/amoswxz" target="_blank"><span class="text-dark">Amos</span><small class="ml-1x">Java &amp; Python &amp; Docker</small></a></h3>
+        <div>NOTHING IS IMPOSSIBLE</div>
+      </div>
+    </figure>
+  </div>
 </div>
+
+
     </div>
   </article>
-   
+  
+    
+  <section id="comments">
+  	
+       
+
+
+    
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2018/05/25/红黑树RBTREE/" title="红黑树"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="wechat,weibo,qq,facebook,twitter" data-mobile-sites="weibo,qq,qzone,wechat"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/AliPay.jpeg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/Wechat.jpeg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -455,6 +602,28 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
+    
+        
+    
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: '集合源码篇（HashMap）', 
+  owner: 'amoswxz', // 可以是你的GitHub用户名，也可以是github id
+  repo: 'AmosWxz.github.io',
+  oauth: {
+    client_id: '97612adfb31213adc94c',
+    client_secret: '5bbdc6f4a3f455fe5486b4a365f5591458521efd',
+  }
+})
+gitment.render('comments')
+</script>
+
+    
+
     
     
 
