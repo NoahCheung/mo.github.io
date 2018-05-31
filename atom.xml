@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.amoswxz.com/"/>
-  <updated>2018-05-31T02:26:53.842Z</updated>
+  <updated>2018-05-31T02:28:37.367Z</updated>
   <id>http://blog.amoswxz.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>集合源码篇（HashMap）</title>
+    <title>HashMap面试总结篇</title>
     <link href="http://blog.amoswxz.com/2018/05/30/HashMap%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/"/>
     <id>http://blog.amoswxz.com/2018/05/30/HashMap面试总结/</id>
     <published>2018-05-29T16:00:00.000Z</published>
-    <updated>2018-05-31T02:26:53.842Z</updated>
+    <updated>2018-05-31T02:28:37.367Z</updated>
     
     <content type="html"><![CDATA[<p>一：针对hashMap面试问题做一个总结吧</p><p>1：HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，使用ConcurrentHashMap。</p><p>2：hashMap采用数组加链表的形式。如果链表的长度大于8并且capacity大于MIN_TREEIFY_CAPACITY=64才会变成红黑树。</p><p>3：hashMap默认的容量是16，默认容量并不是第一次new的时候容量就是16，而是put的时候resize()的扩容的。</p><p>4：hashMap默认的加载因子loadFactor=0.75，这个数值是对空间和时间效率的一个平衡选择。如果内存空间很多而又对时间效率要求很高，可以降低负载因子Loadfactor的值；如果内存空间紧张而对时间效率要求不高，可以增加负载因子loadFactor的值，这个值可以大于1。</p><p>5：hash()算法原理跟获取元素index有关。（n-1） &amp; hash</p><h3 id="6：put-方法简介："><a href="#6：put-方法简介：" class="headerlink" title="6：put()方法简介："></a>6：put()方法简介：</h3><p>1：根据key获取hash值，hash算法大致是key的hashCode的高16位和低16位异或。</p><p>2：判断tab元素是否为null，如果null进行扩容操作。扩容完成以后根据(n-1)&amp;hash(key)获取到元素下标。</p><p>3：根据index获取tab中的元素e，如果获取到e为空，说明该index没元素，直接赋值即可。如果获取到的e不为空，判断e.key和key是否相等，如果相等直接覆盖原来的值即可。如果不相等，判断e是否是TreeNode,如果是，根据e从红黑树查询元素。如果不是TreeNode，循环index下标的元素，判断是否有元素相等，如果有key相等直接返回。没有元素相等链表的尾节点插入元素即可，此处还会判断节点元素是否大于TREEIFY_THRESHOLD，如果大于TREEIFY_THRESHOLD转为红黑树</p><p>4：如果key已经存在，把value直接覆盖，不需要修改modCount直接返回即可。</p><p>5：如果不存在，需要modCount++；判断size++&gt;threshold，大于扩容即可。</p><h3 id="7：get-方法简介："><a href="#7：get-方法简介：" class="headerlink" title="7：get()方法简介："></a>7：get()方法简介：</h3><p>1:根据key获取hash。</p><p>2:根据(n-1)&amp;hash获取index</p><p>3:判断index的第一个节点元素e是否等于key</p><p>4:判断e.next是否等于空，如果不等于空，循环bin查找元素</p><h3 id="8：resize-方法简介："><a href="#8：resize-方法简介：" class="headerlink" title="8：resize()方法简介："></a>8：resize()方法简介：</h3><p>1：判断oldTab.length&gt;0</p><p>2：oldTab.length&gt;0，判断oldTab是否大于最大容量MAXIMUM_CAPACITY，如果大于则threshold=Integer.MAX_VALUE。不大于就把容量扩大2倍并且比较是否大于MAXIMUM_CAPACITY，不大于则临界值扩大2倍。</p><p>3：如果oldTab.length&lt;=0，临界值大于0，说明这是第一次初始化map并且初始化map的时候指定了初始容量。这个时候会调用tableSizeFor()计算临界值。扩容的时候会把newCap=threshold。重新计算临界值=新的容量*加载因子</p><p>4：如果oldTab.length&lt;=0，临界值不大于0。容量等于默认值，临界值=默认容量*加载因子</p><p>5：循环之前的数组，判断同一个index的bin上是否有多个元素，如果只有一个元素，根据这个元素重新计算index，赋值即可。如果存在多个元素，判断元素是否是红黑树，如果是进行红黑树扩容。如果不是则进行元素移动，元素可能在原来的index。也有可能变为oldCap+index。此处移动元素的原理，就是循环bin上的元素。</p>]]></content>
     

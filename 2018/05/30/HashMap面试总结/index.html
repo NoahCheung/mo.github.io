@@ -17,18 +17,18 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>集合源码篇（HashMap） | Amos</title>
+  <title>HashMap面试总结篇 | Amos</title>
   <meta name="description" content="一：针对hashMap面试问题做一个总结吧 1：HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，使用ConcurrentHashMap。 2：hashMap采用数组加链表的形式。如果链表的长度大于8并且capacity大于MIN_TREEIFY_CAPA">
 <meta name="keywords" content="集合源码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="集合源码篇（HashMap）">
+<meta property="og:title" content="HashMap面试总结篇">
 <meta property="og:url" content="http://blog.amoswxz.com/2018/05/30/HashMap面试总结/index.html">
 <meta property="og:site_name" content="Amos">
 <meta property="og:description" content="一：针对hashMap面试问题做一个总结吧 1：HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，使用ConcurrentHashMap。 2：hashMap采用数组加链表的形式。如果链表的长度大于8并且capacity大于MIN_TREEIFY_CAPA">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-31T02:26:53.842Z">
+<meta property="og:updated_time" content="2018-05-31T02:28:37.367Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="集合源码篇（HashMap）">
+<meta name="twitter:title" content="HashMap面试总结篇">
 <meta name="twitter:description" content="一：针对hashMap面试问题做一个总结吧 1：HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，使用ConcurrentHashMap。 2：hashMap采用数组加链表的形式。如果链表的长度大于8并且capacity大于MIN_TREEIFY_CAPA">
   <!-- Canonical links -->
   <link rel="canonical" href="http://blog.amoswxz.com/2018/05/30/HashMap面试总结/index.html">
@@ -268,7 +268,7 @@
                 <a class="category-link" href="/categories/面试篇/">面试篇</a>
               </p>
               <p class="item-title">
-                <a href="/2018/05/30/HashMap面试总结/" class="title">集合源码篇（HashMap）</a>
+                <a href="/2018/05/30/HashMap面试总结/" class="title">HashMap面试总结篇</a>
               </p>
               <p class="item-date">
                 <time datetime="2018-05-29T16:00:00.000Z" itemprop="datePublished">2018-05-30</time>
@@ -356,7 +356,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      集合源码篇（HashMap）
+      HashMap面试总结篇
     </h1>
   
 
@@ -425,7 +425,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://blog.amoswxz.com/2018/05/30/HashMap面试总结/" title="集合源码篇（HashMap）" target="_blank" rel="external">http://blog.amoswxz.com/2018/05/30/HashMap面试总结/</a>
+      <a href="http://blog.amoswxz.com/2018/05/30/HashMap面试总结/" title="HashMap面试总结篇" target="_blank" rel="external">http://blog.amoswxz.com/2018/05/30/HashMap面试总结/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -611,7 +611,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: '集合源码篇（HashMap）', 
+  id: 'HashMap面试总结篇', 
   owner: 'amoswxz', // 可以是你的GitHub用户名，也可以是github id
   repo: 'AmosWxz.github.io',
   oauth: {
