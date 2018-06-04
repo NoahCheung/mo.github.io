@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.amoswxz.com/2018/05/30/AbstractQueuedSynchronizer/</loc>
+    
+    <lastmod>2018-06-04T10:23:03.298Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.amoswxz.com/2018/05/30/ArrayBlockingQueue/</loc>
+    
+    <lastmod>2018-06-04T10:22:39.209Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.amoswxz.com/2018/04/17/Queue/</loc>
     
     <lastmod>2018-06-04T10:17:07.461Z</lastmod>

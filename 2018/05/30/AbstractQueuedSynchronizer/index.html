@@ -17,20 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>关于 | Amos</title>
-  <meta name="description" content="个人简介">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="http://blog.amoswxz.com/about/index.html">
+  <title>AbstractQueuedSynchronizer | Amos</title>
+  <meta name="description" content="记录Amos成长路上点点滴滴~">
+<meta name="keywords" content="队列同步器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AbstractQueuedSynchronizer">
+<meta property="og:url" content="http://blog.amoswxz.com/2018/05/30/AbstractQueuedSynchronizer/index.html">
 <meta property="og:site_name" content="Amos">
-<meta property="og:description" content="个人简介">
+<meta property="og:description" content="记录Amos成长路上点点滴滴~">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-24T06:02:16.655Z">
+<meta property="og:updated_time" content="2018-06-04T10:23:03.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于">
-<meta name="twitter:description" content="个人简介">
+<meta name="twitter:title" content="AbstractQueuedSynchronizer">
+<meta name="twitter:description" content="记录Amos成长路上点点滴滴~">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://blog.amoswxz.com/about/index.html">
+  <link rel="canonical" href="http://blog.amoswxz.com/2018/05/30/AbstractQueuedSynchronizer/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Amos" type="application/atom+xml">
   
@@ -42,6 +43,8 @@
   <link rel="stylesheet" href="/css/style.css">
   
     
+    
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
     
 
 </head>
@@ -343,131 +346,184 @@
 </aside>
 
   
-  <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    
-    <div class="widget">
-      <h3 class="widget-title">个人链接</h3>
-      <div class="widget-body">
-        <ul class="link-list lh-2x">
-          
-          <li>
-            Github:
-            <a href="https://github.com/amoswxz" target="_blank">https://github.com/amoswxz</a>
-          </li>
-          
-          <li>
-            FB:
-            <a href="https://facebook.com/amoswxz" target="_blank">https://facebook.com/amoswxz</a>
-          </li>
-          
-          <li>
-            Blog:
-            <a href="http://blog.amoswxz.com" target="_blank">http://blog.amoswxz.com</a>
-          </li>
-          
-        </ul>
-      </div>
-    </div>
-    
-    
-    <div class="widget">
-      <h3 class="widget-title">技能</h3>
-      <div class="widget-body">
-        <ul class="skill-list lh-2x">
-          
-          <li class="clearfix">
-            <span>Java</span>
-            <span class="pull-right">★★★★☆</span>
-          </li>
-          
-          <li class="clearfix">
-            <span>Mysql</span>
-            <span class="pull-right">★★★☆☆</span>
-          </li>
-          
-          <li class="clearfix">
-            <span>Python</span>
-            <span class="pull-right">★★★☆☆</span>
-          </li>
-          
-          <li class="clearfix">
-            <span>Docker</span>
-            <span class="pull-right">★☆☆☆☆</span>
-          </li>
-          
-        </ul>
-      </div>
-    </div>
-    
-    
-    <div class="widget">
-      <h3 class="widget-title">个人标签</h3>
-      <div class="widget-body">
-        
-        <span class="label label-default mb">Java</span>
-        
-        <span class="label label-default mb">Python</span>
-        
-        <span class="label label-default mb">Mysql</span>
-        
-        <span class="label label-default mb">Docker</span>
-        
-      </div>
-    </div>
-    
-    
-    <div class="widget">
-      <h3 class="widget-title">个人作品</h3>
-      <div class="widget-body">
-        <ul class="work-list lh-2x">
-          
-          <li class="clearfix">
-            <a href="http://blog.amoswxz.com" target="_blank" title="name">
-              <span>name</span>
-              <span class="pull-right text-muted">2018</span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-    </div>
-    
-    
-    <div class="widget">
-      <h3 class="widget-title">个人项目</h3>
-      <div class="widget-body">
-        <ul class="project-list list-square lh-2x">
-          
-          <li class="public source">
-            <a href="https://github.com/amoswxz/AmosWxz.github.io" target="_blank" title="amoswxz/AmosWxz.github.io">
-              <span class="repo-icon octicon octicon-repo"></span>
-              <span class="repo-and-owner css-truncate-target">amoswxz/AmosWxz.github.io</span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-</aside>
+  
 <main class="main" role="main">
-  <article class="article archives-about article-type-normal" itemscope="">
-  <header class="article-header">
-    <h1 itemprop="title">关于</h1>
+  <div class="content">
+  <article id="post-AbstractQueuedSynchronizer" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-    <p class="text-muted">个人简介</p>
-    
-  </header>
-  <div class="article-body">
-    <p>个人详细介绍</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  name: '王小中'</span><br><span class="line">  age: 22,</span><br><span class="line">  gender: '男',</span><br><span class="line">  profession: 'java开发',</span><br><span class="line">  experience: '3年',</span><br><span class="line">  address: '北京朝阳',</span><br><span class="line">  education: '专科',</span><br><span class="line">  github: 'https://github.com/amoswxz',</span><br><span class="line">  blog: 'http://amoswxz.com',</span><br><span class="line">  email: 'amoswxz@gmail.com',</span><br><span class="line">  description: '后端开发，喜爱Java，乐于全栈',</span><br><span class="line"></span><br><span class="line">  skills: [</span><br><span class="line">    ['Java', 'Python'],</span><br><span class="line">    ['Spring', 'SpringBoot','SpringCloud','Mybatis'],</span><br><span class="line">    ['Mysql', 'Oracle'],</span><br><span class="line">    ['Git', 'SVN'],</span><br><span class="line">    ['Docker'],</span><br><span class="line">    ['React'],</span><br><span class="line">  ],</span><br><span class="line"></span><br><span class="line">  devTools: [</span><br><span class="line">    ['Intellij IDEA', 'DataGrip'， 'WebStorm', 'PyCharm', 'Sublime Text'],</span><br><span class="line">    ['Chrome DevTools'],</span><br><span class="line">    ['Iterm'],</span><br><span class="line">  ]  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AbstractQueuedSynchronizer
+    </h1>
+  
 
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/05/30/AbstractQueuedSynchronizer/" class="article-date">
+	  <time datetime="2018-05-29T16:00:00.000Z" itemprop="datePublished">2018-05-30</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/并发包/">并发包</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/队列同步器/">队列同步器</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/05/30/AbstractQueuedSynchronizer/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 0(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://blog.amoswxz.com/2018/05/30/AbstractQueuedSynchronizer/" title="AbstractQueuedSynchronizer" target="_blank" rel="external">http://blog.amoswxz.com/2018/05/30/AbstractQueuedSynchronizer/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/amoswxz" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/favicon.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/amoswxz" target="_blank"><span class="text-dark">Amos</span><small class="ml-1x">Java &amp; Python &amp; Docker</small></a></h3>
+        <div>NOTHING IS IMPOSSIBLE</div>
+      </div>
+    </figure>
   </div>
-</article>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+       
+
+
+    
+    
+  </section>
+
 
   
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/06/01/HashSet/" title="集合源码篇（HashSet）"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/05/30/ArrayBlockingQueue/" title="ArrayBlockingQueue"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="wechat,weibo,qq,facebook,twitter" data-mobile-sites="weibo,qq,qzone,wechat"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/AliPay.jpeg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/Wechat.jpeg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 </main>
@@ -530,6 +586,28 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
+    
+        
+    
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: 'AbstractQueuedSynchronizer', 
+  owner: 'amoswxz', // 可以是你的GitHub用户名，也可以是github id
+  repo: 'AmosWxz.github.io',
+  oauth: {
+    client_id: '97612adfb31213adc94c',
+    client_secret: '5bbdc6f4a3f455fe5486b4a365f5591458521efd',
+  }
+})
+gitment.render('comments')
+</script>
+
+    
+
     
     
 
