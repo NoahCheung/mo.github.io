@@ -19,14 +19,14 @@
   
   <title>红黑树 | Amos</title>
   <meta name="description" content="一：简介红黑树从本质上来说就是一颗二叉查找树，但是在二叉树的基础上增加了着色相关的性质，使得红黑树可以保证相对平衡，从而保证红黑树的增删改查的时间复杂度最坏也能达到O(log N)。 二：特点  每个节点要么是黑的，要么是红的 根节点是黑的 叶节点是黑的 如果一个节点是红的，他的两个儿子节点都是黑的 对于任一节点而言，其到叶节点树尾端NIL指针的每一条路径都包含相同数目的黑节点">
-<meta name="keywords" content="集合源码">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="红黑树">
 <meta property="og:url" content="http://blog.amoswxz.com/2018/05/25/红黑树RBTREE/index.html">
 <meta property="og:site_name" content="Amos">
 <meta property="og:description" content="一：简介红黑树从本质上来说就是一颗二叉查找树，但是在二叉树的基础上增加了着色相关的性质，使得红黑树可以保证相对平衡，从而保证红黑树的增删改查的时间复杂度最坏也能达到O(log N)。 二：特点  每个节点要么是黑的，要么是红的 根节点是黑的 叶节点是黑的 如果一个节点是红的，他的两个儿子节点都是黑的 对于任一节点而言，其到叶节点树尾端NIL指针的每一条路径都包含相同数目的黑节点">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-25T08:25:18.015Z">
+<meta property="og:updated_time" content="2018-06-04T10:24:28.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="红黑树">
 <meta name="twitter:description" content="一：简介红黑树从本质上来说就是一颗二叉查找树，但是在二叉树的基础上增加了着色相关的性质，使得红黑树可以保证相对平衡，从而保证红黑树的增删改查的时间复杂度最坏也能达到O(log N)。 二：特点  每个节点要么是黑的，要么是红的 根节点是黑的 叶节点是黑的 如果一个节点是红的，他的两个儿子节点都是黑的 对于任一节点而言，其到叶节点树尾端NIL指针的每一条路径都包含相同数目的黑节点">
@@ -220,7 +220,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo搭建博客/">Hexo搭建博客</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发包/">并发包</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构简介/">数据结构简介</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/集合源码/">集合源码</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试篇/">面试篇</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo搭建博客/">Hexo搭建博客</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发包/">并发包</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/集合源码/">集合源码</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试篇/">面试篇</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -230,7 +230,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo搭建博客/">Hexo搭建博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/队列同步器/">队列同步器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/队列源码/">队列源码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/集合源码/">集合源码</a><span class="tag-list-count">8</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo搭建博客/">Hexo搭建博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/队列同步器/">队列同步器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/队列源码/">队列源码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/集合源码/">集合源码</a><span class="tag-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -240,7 +240,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/Hexo搭建博客/" style="font-size: 13.5px;">Hexo搭建博客</a> <a href="/tags/数据结构/" style="font-size: 13.5px;">数据结构</a> <a href="/tags/队列同步器/" style="font-size: 13px;">队列同步器</a> <a href="/tags/队列源码/" style="font-size: 13px;">队列源码</a> <a href="/tags/集合源码/" style="font-size: 14px;">集合源码</a>
+      <a href="/tags/Hexo搭建博客/" style="font-size: 13.33px;">Hexo搭建博客</a> <a href="/tags/数据结构/" style="font-size: 13.67px;">数据结构</a> <a href="/tags/队列同步器/" style="font-size: 13px;">队列同步器</a> <a href="/tags/队列源码/" style="font-size: 13px;">队列源码</a> <a href="/tags/集合源码/" style="font-size: 14px;">集合源码</a>
     </div>
   </div>
 
@@ -377,7 +377,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/集合源码/">集合源码</a>
+	<a class="article-tag-link" href="/tags/数据结构/">数据结构</a>
   </span>
 
 
