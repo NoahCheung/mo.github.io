@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.amoswxz.com/2018/04/17/Queue/</loc>
+    
+    <lastmod>2018-06-04T10:17:07.461Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.amoswxz.com/2018/05/21/HashMap/</loc>
     
     <lastmod>2018-06-04T03:38:50.551Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://blog.amoswxz.com/2018/05/21/Iterator%E5%92%8CIterable/</loc>
     
     <lastmod>2018-05-21T06:49:12.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.amoswxz.com/2018/04/17/Queue/</loc>
-    
-    <lastmod>2018-05-13T08:52:15.717Z</lastmod>
     
   </url>
   
