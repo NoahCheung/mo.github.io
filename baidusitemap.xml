@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://blog.amoswxz.com/2018/06/05/CAS/</loc>
+    <lastmod>2018-06-06T09:43:23.137Z</lastmod>
+    <data>
+        <display>
+        <title>Compare-And-Swap</title>
+        <pubTime>2018-06-04T16:00:00.000Z</pubTime>
+        
+        <tag>对比交换</tag>
+         
+         
+           
+             
+              <breadCrumb title="并发包" url="http://blog.amoswxz.com/categories/%E5%B9%B6%E5%8F%91%E5%8C%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.amoswxz.com/2018/05/30/AbstractQueuedSynchronizer/</loc>
+    <lastmod>2018-06-05T09:40:18.771Z</lastmod>
+    <data>
+        <display>
+        <title>AbstractQueuedSynchronizer</title>
+        <pubTime>2018-05-29T16:00:00.000Z</pubTime>
+        
+        <tag>队列同步器</tag>
+         
+         
+           
+             
+              <breadCrumb title="并发包" url="http://blog.amoswxz.com/categories/%E5%B9%B6%E5%8F%91%E5%8C%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.amoswxz.com/2018/05/25/%E7%BA%A2%E9%BB%91%E6%A0%91RBTREE/</loc>
     <lastmod>2018-06-04T10:24:28.960Z</lastmod>
     <data>
@@ -57,26 +97,6 @@
            
              
               <breadCrumb title="数据结构" url="http://blog.amoswxz.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.amoswxz.com/2018/05/30/AbstractQueuedSynchronizer/</loc>
-    <lastmod>2018-06-04T10:23:03.298Z</lastmod>
-    <data>
-        <display>
-        <title>AbstractQueuedSynchronizer</title>
-        <pubTime>2018-05-29T16:00:00.000Z</pubTime>
-        
-        <tag>队列同步器</tag>
-         
-         
-           
-             
-              <breadCrumb title="并发包" url="http://blog.amoswxz.com/categories/%E5%B9%B6%E5%8F%91%E5%8C%85/"/>
           
         </display>
     </data>
