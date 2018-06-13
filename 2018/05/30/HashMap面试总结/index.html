@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="Amos">
 <meta property="og:description" content="一：针对hashMap面试问题做一个总结吧 1：HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，使用ConcurrentHashMap。 2：hashMap采用数组加链表的形式。如果链表的长度大于8并且capacity大于MIN_TREEIFY_CAPA">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-31T02:28:37.367Z">
+<meta property="og:updated_time" content="2018-06-07T10:24:58.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HashMap面试总结篇">
 <meta name="twitter:description" content="一：针对hashMap面试问题做一个总结吧 1：HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，使用ConcurrentHashMap。 2：hashMap采用数组加链表的形式。如果链表的长度大于8并且capacity大于MIN_TREEIFY_CAPA">
@@ -298,6 +298,21 @@
                 <a class="category-link" href="/categories/并发包/">并发包</a>
               </p>
               <p class="item-title">
+                <a href="/2018/05/30/ArrayBlockingQueue/" class="title">ArrayBlockingQueue</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-05-29T16:00:00.000Z" itemprop="datePublished">2018-05-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/并发包/">并发包</a>
+              </p>
+              <p class="item-title">
                 <a href="/2018/05/30/AbstractQueuedSynchronizer/" class="title">AbstractQueuedSynchronizer</a>
               </p>
               <p class="item-date">
@@ -314,21 +329,6 @@
               </p>
               <p class="item-title">
                 <a href="/2018/05/30/HashMap面试总结/" class="title">HashMap面试总结篇</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-05-29T16:00:00.000Z" itemprop="datePublished">2018-05-30</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/并发包/">并发包</a>
-              </p>
-              <p class="item-title">
-                <a href="/2018/05/30/ArrayBlockingQueue/" class="title">ArrayBlockingQueue</a>
               </p>
               <p class="item-date">
                 <time datetime="2018-05-29T16:00:00.000Z" itemprop="datePublished">2018-05-30</time>
@@ -386,10 +386,10 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/05/30/HashMap面试总结/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 893(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1,116(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
 	
 
       </div>
@@ -416,6 +416,9 @@
 <p>3：如果oldTab.length&lt;=0，临界值大于0，说明这是第一次初始化map并且初始化map的时候指定了初始容量。这个时候会调用tableSizeFor()计算临界值。扩容的时候会把newCap=threshold。重新计算临界值=新的容量*加载因子</p>
 <p>4：如果oldTab.length&lt;=0，临界值不大于0。容量等于默认值，临界值=默认容量*加载因子</p>
 <p>5：循环之前的数组，判断同一个index的bin上是否有多个元素，如果只有一个元素，根据这个元素重新计算index，赋值即可。如果存在多个元素，判断元素是否是红黑树，如果是进行红黑树扩容。如果不是则进行元素移动，元素可能在原来的index。也有可能变为oldCap+index。此处移动元素的原理，就是循环bin上的元素。</p>
+<h3 id="9：HashMap中为什么table-entrySet要使用transient是来修饰。（transient修饰表示不可被序列化）"><a href="#9：HashMap中为什么table-entrySet要使用transient是来修饰。（transient修饰表示不可被序列化）" class="headerlink" title="9：HashMap中为什么table,entrySet要使用transient是来修饰。（transient修饰表示不可被序列化）"></a>9：HashMap中为什么table,entrySet要使用transient是来修饰。（transient修饰表示不可被序列化）</h3><p>stackoverflow 查了一下，大概有两个原因。</p>
+<p>1：transient 是表明该数据不参与序列化。因为 HashMap 中的存储数据的数组数据成员中，数组还有很多的空间没有被使用，没有被使用到的空间被序列化没有意义。所以需要手动使用 writeObject() 方法，只序列化实际存储元素的数组。</p>
+<p>2：由于不同的虚拟机对于相同 hashCode 产生的 Code 值可能是不一样的，如果你使用默认的序列化，那么反序列化后，元素的位置和之前的是保持一致的，可是由于 hashCode 的值不一样了，那么定位函数 indexOf（）返回的元素下标就会不同，这样不是我们所想要的结果.</p>
 
       
     </div>
@@ -480,7 +483,7 @@
     
     
     <li class="next">
-      <a href="/2018/05/30/ArrayBlockingQueue/" title="ArrayBlockingQueue"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2018/05/25/红黑树RBTREE/" title="红黑树"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
