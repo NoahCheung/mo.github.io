@@ -17,19 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Amos</title>
+  <title>AQS实现共享锁 | Amos</title>
   <meta name="description" content="记录Amos成长路上点点滴滴~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Amos">
-<meta property="og:url" content="http://blog.amoswxz.com/page/2/index.html">
+<meta name="keywords" content="并发包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AQS实现共享锁">
+<meta property="og:url" content="http://blog.amoswxz.com/2018/06/08/AQS共享锁/index.html">
 <meta property="og:site_name" content="Amos">
 <meta property="og:description" content="记录Amos成长路上点点滴滴~">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-14T03:48:10.109Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Amos">
+<meta name="twitter:title" content="AQS实现共享锁">
 <meta name="twitter:description" content="记录Amos成长路上点点滴滴~">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://blog.amoswxz.com/page/2/index.html">
+  <link rel="canonical" href="http://blog.amoswxz.com/2018/06/08/AQS共享锁/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Amos" type="application/atom+xml">
   
@@ -41,6 +43,8 @@
   <link rel="stylesheet" href="/css/style.css">
   
     
+    
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
     
 
 </head>
@@ -342,347 +346,182 @@
 </aside>
 
   
-  <main class="main" role="main">
   
-  <div class="content article-list">
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-AQS共享锁" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
+    <div class="article-header">
+      
+        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/21/Iterator和Iterable/">Iterator和Iterable</a>
+    <h1 class="article-title" itemprop="name">
+      AQS实现共享锁
     </h1>
   
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
+      
+      <div class="article-meta">
+        <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/05/21/Iterator和Iterable/" class="article-date">
-	  <time datetime="2018-05-20T16:00:00.000Z" itemprop="datePublished">May 21</time>
+	<a href="/2018/06/08/AQS共享锁/" class="article-date">
+	  <time datetime="2018-06-07T16:00:00.000Z" itemprop="datePublished">2018-06-08</time>
 	</a>
 </span>
-    
+        
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/集合源码/">集合源码</a>
+    <a class="article-category-link" href="/categories/AQS实现共享锁/">AQS实现共享锁</a>
   </span>
 
-    
+        
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/集合源码/">集合源码</a>
+	<a class="article-tag-link" href="/tags/并发包/">并发包</a>
   </span>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/05/21/Iterator和Iterable/#comments" class="article-comment-link">评论</a></span>
-    
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/06/08/AQS共享锁/#comments" class="article-comment-link">评论</a></span>
+        
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 409(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/04/LinkedList/">集合源码篇（LinkedList）</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2018/05/04/LinkedList/" class="article-date">
-	  <time datetime="2018-05-03T16:00:00.000Z" itemprop="datePublished">May 4</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/集合源码/">集合源码</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/集合源码/">集合源码</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/05/04/LinkedList/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 923(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/18/ArrayList/">集合源码篇（ArrayList）</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2018/04/18/ArrayList/" class="article-date">
-	  <time datetime="2018-04-17T16:00:00.000Z" itemprop="datePublished">Apr 18</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/集合源码/">集合源码</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/集合源码/">集合源码</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/18/ArrayList/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1,877(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 8(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/17/Queue/">数据结构（Queue）</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2018/04/17/Queue/" class="article-date">
-	  <time datetime="2018-04-16T16:00:00.000Z" itemprop="datePublished">Apr 17</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/数据结构/">数据结构</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/数据结构/">数据结构</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/17/Queue/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 275(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 0(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
 	
 
-  </p>
-</article>
-
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://blog.amoswxz.com/2018/06/08/AQS共享锁/" title="AQS实现共享锁" target="_blank" rel="external">http://blog.amoswxz.com/2018/06/08/AQS共享锁/</a>
+    </li>
     
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/17/data-structure-introduction/">数据结构（ADT）</a>
-    </h1>
-  
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/amoswxz" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/favicon.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/amoswxz" target="_blank"><span class="text-dark">Amos</span><small class="ml-1x">Java &amp; Python &amp; Docker</small></a></h3>
+        <div>NOTHING IS IMPOSSIBLE</div>
+      </div>
+    </figure>
   </div>
+</div>
+
+
+    </div>
+  </article>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2018/04/17/data-structure-introduction/" class="article-date">
-	  <time datetime="2018-04-16T16:00:00.000Z" itemprop="datePublished">Apr 17</time>
-	</a>
-</span>
     
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/数据结构/">数据结构</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/数据结构/">数据结构</a>
-  </span>
+  <section id="comments">
+  	
+       
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/17/data-structure-introduction/#comments" class="article-comment-link">评论</a></span>
     
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 581(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
-	
+    
+  </section>
 
-  </p>
-</article>
 
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/16/hexo1/">Hexo快速搭建博客(二)</a>
-    </h1>
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
   
-
-  </div>
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2018/06/08/AQS简介/" title="AbstractQueuedSynchronizer简介"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2018/04/16/hexo1/" class="article-date">
-	  <time datetime="2018-04-15T16:00:00.000Z" itemprop="datePublished">Apr 16</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/Hexo搭建博客/">Hexo搭建博客</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/Hexo搭建博客/">Hexo搭建博客</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/16/hexo1/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 154(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/14/hexo/">Hexo快速搭建博客(一)</a>
-    </h1>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
   
-
-  </div>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2018/04/14/hexo/" class="article-date">
-	  <time datetime="2018-04-13T16:00:00.000Z" itemprop="datePublished">Apr 14</time>
-	</a>
-</span>
+  <div class="bar-right">
     
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/Hexo搭建博客/">Hexo搭建博客</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/Hexo搭建博客/">Hexo搭建博客</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/14/hexo/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 249(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
+    <div class="share-component" data-sites="wechat,weibo,qq,facebook,twitter" data-mobile-sites="weibo,qq,qzone,wechat"></div>
     
   </div>
-
+  </div>
+</nav>
   
-    
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev">
-                <a href="/">
-                    <i class="icon icon-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next disabled">
-                <a href="javascript:;">
-                    下一页
-                    <i class="icon icon-angle-right"></i>                    
-                </a>
-            </li>
-            
-        </ul>
-        <div class="total-article bar-right">Page 2 of 2</div>
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/AliPay.jpeg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/Wechat.jpeg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    
- 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -743,6 +582,28 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
+    
+        
+    
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: 'AQS实现共享锁', 
+  owner: 'amoswxz', // 可以是你的GitHub用户名，也可以是github id
+  repo: 'AmosWxz.github.io',
+  oauth: {
+    client_id: '97612adfb31213adc94c',
+    client_secret: '5bbdc6f4a3f455fe5486b4a365f5591458521efd',
+  }
+})
+gitment.render('comments')
+</script>
+
+    
+
     
     
 
