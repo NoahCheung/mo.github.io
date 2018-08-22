@@ -1,2 +1,2 @@
-# AmosWxz.github.io
+# mo.github.io
 Essays on the road to growth.
